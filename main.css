@@ -53,3 +53,15 @@ a:link {
 a:visited {
     color: red;
 }
+
+div.menu {
+    border: 10px solid #00af0080;
+    border-radius: 5px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+div.menu:hover {
+    background-color:burlywood;
+    box-shadow: 0 0 15px black;
+}
