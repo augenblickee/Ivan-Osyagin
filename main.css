@@ -25,3 +25,31 @@ header {
     font-family: Arial;
     margin: 0px;
 }
+
+a {
+    color: green;
+    text-decoration: none;
+    transition: 0.5s 0.1s;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+    font-size: 60px;
+    text-shadow: 10px 10px 3px black;
+    transition: 0.5s;
+}
+
+a:active {
+    color: black;
+    opacity: 0.3;
+}
+
+a:link {
+    color: red;
+    opacity: 0.3;
+}
+
+a:visited {
+    color: red;
+}
