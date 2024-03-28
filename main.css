@@ -40,7 +40,7 @@ a {
 a:hover {
     color: red;
     text-decoration: underline;
-    font-size: 60px;
+    font-size: 20px;
     text-shadow: 10px 10px 3px black;
     transition: 0.5s;
 }
@@ -60,10 +60,11 @@ a:visited {
 }
 
 div.menu {
-    border: 10px solid #00af0080;
+    border: 10px solid black;
     border-radius: 5px;
     width: 500px;
     margin: 0 auto;
+    border-radius: 50% 20% / 10% 40%;   
 }
 
 div.menu:hover {
