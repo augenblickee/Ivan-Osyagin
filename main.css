@@ -64,10 +64,12 @@ div.menu {
     border-radius: 5px;
     width: 500px;
     margin: 0 auto;
-    border-radius: 50% 20% / 10% 40%;   
+    border-radius: 50% 20% / 10% 40%;
+    transition: 0.5s;
 }
 
 div.menu:hover {
     background-color:burlywood;
     box-shadow: 0 0 15px black;
+    transition: 0.5s;
 }
