@@ -18,6 +18,12 @@
                 cursor: pointer;
                 width: 100px;
             }
+
+            #output {
+                border: 10px solid;
+                width: 300px;
+                height: 40px;
+            }
         </style>
 
         <script>
@@ -66,13 +72,21 @@
             }
 
             function showAuthor() {
-                let author = 'Автор страницы:\nОсягин Иван Дмитриевич'
-                alert(author)
+                let author = 'Автор страницы:\nОсягин Иван Дмитриевич';
+                alert(author);
             }
 
             function showFooter() {
-                let author = 'ДОБРО ПОЖАЛОВАТЬ В ПОДВАЛ!!!'
-                alert(author)
+                let author = 'ДОБРО ПОЖАЛОВАТЬ В ПОДВАЛ!!!';
+                alert(author);
+            }
+
+            function changeOutput(buttonNum, backColor, textColor, borderChange) {
+                let output = document.getElementById('output');
+                output.innerHTML = 'Нажата кнопка ' + buttonNum;
+                output.style.backgroundColor = backColor;
+                output.style.color = textColor;
+                output.style.borderBlockStyle = borderChange;
             }
         </script>
 
@@ -87,14 +101,19 @@
             <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
             <label>Первое число: <input type="number" value="7891" id="numberB"></label><br>
             <div class="message" onclick="showSum()">Узнать сумму чисел</div>
-
             <div class="message" onclick="showDiff()">Узнать разность чисел</div>
-
             <div class="message" onclick="showMul()">Узнать произведение чисел</div>
-
             <div class="message" onclick="showDiv()">Узнать деление чисел</div>
-
             <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+
+            <div>
+                <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 'dotted')">
+                <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'blue', 'black', 'groove')">
+                <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'magenta', 'black','inherit')">
+                <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'cyan', 'lightcoral','revert-layer')">
+            </div>
+
+            <div id="output"></div>
         </main>
 
         <footer onclick="showFooter()" style="cursor: pointer;"> 
