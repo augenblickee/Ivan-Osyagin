@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Осягин Иван Дмитриевич. Лабораторная работа 5 </title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../favicon-16x16.png">
+        <link rel="shortcut icon" href="../favicon-32x32.png">
+        <style>
+            div {
+                border: 10px dotted red;
+                display: inline-block;
+            }
+            input {
+                margin-top: 3px;
+                margin-bottom: 10px;
+                
+            }
+        </style>
+        <script>
+            function Summ() {
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+                let inputC = document.getElementById('numberC');
+                let inputD = document.getElementById('numberD');
+
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
+                let c = parseInt(inputC.value);
+                let d = parseInt(inputD.value);
+
+                let result = a * 200 + b * 2200 + c * 150 + d * 3900;
+
+                alert(result);
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+        </header>
+
+        <main>
+            <h1>Корзина товаров</h1>
+            <div>
+                <label>Глеб (200р/штука)</label><br>
+                <input type="number" id="numberA" placeholder="Сколько глебов!?"><br>
+                <label>Большой бюргер (2200р/штука)</label><br>
+                <input type="number" id="numberB" placeholder="Хочешь Бюргер?"><br>
+                <label>Ананас (150/кг) </label><br>
+                <input type="number" id="numberC" placeholder="Введите килограммы"><br>
+                <label>Мышьяк (3900/гр) </label><br>
+                <input type="number" id="numberD" placeholder="Введите граммы"><br>
+
+                <input type="button" value="Рассчитать сумму" onclick="Summ()">
+            </div>
+        </main>
+
+        <footer> 
+            &copy; Осягин Иван, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
