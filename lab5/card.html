@@ -12,6 +12,8 @@
             div {
                 border: 10px dotted red;
                 display: inline-block;
+                margin: 10px;
+                padding: 10px;
             }
             input {
                 margin-top: 3px;
@@ -30,10 +32,23 @@
                 let b = parseInt(inputB.value);
                 let c = parseInt(inputC.value);
                 let d = parseInt(inputD.value);
+                if (isNaN(a)) a = 0;
+                if (isNaN(b)) b = 0;
+                if (isNaN(c)) c = 0;
+                if (isNaN(d)) d = 0;
 
                 let result = a * 200 + b * 2200 + c * 150 + d * 3900;
 
-                alert(result);
+                if (result <= 0) document.getElementById('sum').innerHTML = "Ваша корзина пуста!";
+                else document.getElementById('sum').innerHTML = 'Сумма продуктов = ' + result + ' рублей';
+            }
+
+            function nul() {
+                document.getElementById('numberA').value = '';
+                document.getElementById('numberB').value = '';
+                document.getElementById('numberC').value = '';
+                document.getElementById('numberD').value = '';
+                document.getElementById('sum').innerHTML = '';
             }
         </script>
     </head>
@@ -47,15 +62,17 @@
             <h1>Корзина товаров</h1>
             <div>
                 <label>Глеб (200р/штука)</label><br>
-                <input type="number" id="numberA" placeholder="Сколько глебов!?"><br>
+                <input type="number" id="numberA" placeholder="Сколько глебов!?" min="0"><br>
                 <label>Большой бюргер (2200р/штука)</label><br>
-                <input type="number" id="numberB" placeholder="Хочешь Бюргер?"><br>
+                <input type="number" id="numberB" placeholder="Хочешь Бюргер?" min="0"><br>
                 <label>Ананас (150/кг) </label><br>
-                <input type="number" id="numberC" placeholder="Введите килограммы"><br>
+                <input type="number" id="numberC" placeholder="Введите килограммы" min="0"><br>
                 <label>Мышьяк (3900/гр) </label><br>
-                <input type="number" id="numberD" placeholder="Введите граммы"><br>
-
+                <input type="number" id="numberD" placeholder="Введите граммы" min="0"><br>
                 <input type="button" value="Рассчитать сумму" onclick="Summ()">
+                <input type="button" value="Очистить" onclick="nul()"><br>
+                <label id="sum"></label>
+
             </div>
         </main>
 
