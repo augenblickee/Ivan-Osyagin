@@ -26,23 +26,23 @@
             }
         </style>
         <script>
-            let color = ['red','magenta','green','purple','salmon','blue','lightblue']
-            let colorrus = ['красный','фиолетовый','зеленый','темно-фиолетовый','салмон)','синий','голубой']
-            let k = 0
+            let color = ['red','magenta','green','purple','salmon','blue','lightblue'];
+            let colorrus = ['красный','фиолетовый','зеленый','темно-фиолетовый','салмон)','синий','голубой'];
+            let k = 0;
             function changeColor(div) {
                 if(k == color.length){
-                    k = 0
+                    k = 0;
                 }
                 else{
-                    div.style.backgroundColor = color[k]
-                    document.getElementById('color-name').innerHTML = colorrus[k]
+                    div.style.backgroundColor = color[k];
+                    document.getElementById('color-name').innerHTML = colorrus[k];
                     if(colorrus[k] == 'голубой'){
-                        div.style.color = 'black'
+                        div.style.color = 'black';
                     }
                     else{
-                        div.style.color = 'aliceblue'
+                        div.style.color = 'aliceblue';
                     }
-                    k++
+                    k++;
                 }
             }
         </script>
