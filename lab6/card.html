@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Осягин Иван Дмитриевич. Лабораторная работа 5 </title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../favicon-16x16.png">
+        <link rel="shortcut icon" href="../favicon-32x32.png">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            h1, h2 {
+                text-align: center;
+                color: #333;
+            }
+            #balance {
+                display: block;
+                margin: 0 auto;
+                width: 200px;
+                padding: 10px;
+                margin-bottom: 20px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+            th, td {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: center;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            input[type="button"] {
+                display: block;
+                margin: 0 auto;
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            input[type="button"]:hover {
+                background-color: #45a049;
+            }
+            #sum {
+                display: block;
+                text-align: center;
+                margin-top: 20px;
+                font-size: 1.2em;
+                color: #333;
+            }
+        </style>
+        <script>
+            function Summ() {
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+                let inputC = document.getElementById('numberC');
+                let inputD = document.getElementById('numberD');
+                let balanceInput = document.getElementById('balance');
+
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
+                let c = parseInt(inputC.value);
+                let d = parseInt(inputD.value);
+                let balance = parseFloat(balanceInput.value);
+
+                if (isNaN(a)) a = 0;
+                if (isNaN(b)) b = 0;
+                if (isNaN(c)) c = 0;
+                if (isNaN(d)) d = 0;
+                if (isNaN(balance)) balance = 0;
+
+                let result = a * 200 + b * 2200 + c * 150 + d * 3900;
+
+                if (result == 0) document.getElementById('sum').innerHTML = "Ваша корзина пуста!";
+                else if (result < 0) document.getElementById('sum').innerHTML = "Вы ввели отрицательные значения!";
+                else if (result > balance) document.getElementById('sum').innerHTML = "Недостаточно средств!";
+                else document.getElementById('sum').innerHTML = 'Сумма продуктов = ' + result + ' рублей';
+            }
+
+            function nul() {
+                document.getElementById('numberA').value = '';
+                document.getElementById('numberB').value = '';
+                document.getElementById('numberC').value = '';
+                document.getElementById('numberD').value = '';
+                document.getElementById('balance').value = '';
+                document.getElementById('sum').innerHTML = '';
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 5
+        </header>
+
+        <main>
+            <h1>Корзина товаров</h1>
+            <h2>Ваш баланс</h2>
+            <input type="number" id="balance" placeholder="Введите ваш баланс" min="0">
+            <table>
+                <tr>
+                    <th>Товар</th>
+                    <th>Цена</th>
+                    <th>Количество</th>
+                </tr>
+                <tr>
+                    <td>Глеб</td>
+                    <td>200р/штука</td>
+                    <td><input type="number" id="numberA" placeholder="Сколько глебов!?" min="0"></td>
+                </tr>
+                <tr>
+                    <td>Большой бюргер</td>
+                    <td>2200р/штука</td>
+                    <td><input type="number" id="numberB" placeholder="Хочешь Бюргер?" min="0"></td>
+                </tr>
+                <tr>
+                    <td>Ананас</td>
+                    <td>150/кг</td>
+                    <td><input type="number" id="numberC" placeholder="Введите килограммы" min="0"></td>
+                </tr>
+                <tr>
+                    <td>Мышьяк</td>
+                    <td>3900/гр</td>
+                    <td><input type="number" id="numberD" placeholder="Введите граммы" min="0"></td>
+                </tr>
+            </table>
+            <input type="button" value="Рассчитать сумму" onclick="Summ()">
+            <input type="button" value="Очистить" onclick="nul()"><br>
+            <label id="sum"></label>
+        </main>
+
+        <footer> 
+            &copy; Осягин Иван, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
