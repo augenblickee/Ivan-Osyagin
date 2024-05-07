@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Осягин Иван Дмитриевич. Лабораторная работа 6 </title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../favicon-16x16.png">
+        <link rel="shortcut icon" href="../favicon-32x32.png">
+        <style>
+            .color {
+                border: 4px solid salmon;
+                border-radius: 40%;
+                margin: 20px auto;
+                padding: 10px;
+                align-self: center;
+                width: 20%;
+                text-align: center;
+                font-size:larger;
+                background-color: lightblue;
+                user-select: none;
+                color: black;
+                cursor: grab;
+                transition: 1s;
+            }
+        </style>
+        <script>
+            let color = ['red','magenta','green','purple','salmon','blue','lightblue']
+            let colorrus = ['красный','фиолетовый','зеленый','темно-фиолетовый','салмон)','синий','голубой']
+            let k = 0
+            function changeColor(div) {
+                if(k == color.length){
+                    k = 0
+                }
+                else{
+                    div.style.backgroundColor = color[k]
+                    document.getElementById('color-name').innerHTML = colorrus[k]
+                    if(colorrus[k] == 'голубой'){
+                        div.style.color = 'black'
+                    }
+                    else{
+                        div.style.color = 'aliceblue'
+                    }
+                    k++
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 6
+        </header>
+
+        <main>
+            <div class="color" ondblclick="changeColor(this)">
+                Цвет: <span id="color-name">голубой</span><br>
+                Сделайте двойной щелчек для смены цвета
+            </div>
+        </main>
+
+        <footer> 
+            &copy; Осягин Иван, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
