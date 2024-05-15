@@ -13,8 +13,25 @@
                 let newBlock = document.createElement('div');
                 newBlock.style.background = 'green';
                 newBlock.style.height = '40px';
+                document.querySelector('main').appendChild(newBlock);
+            }
 
-                document.querySelector('main').append(newBlock);
+            function addNewBlocks() {
+                let main = document.querySelector('main')
+                let widthh = 0
+                let times = parseInt(document.getElementById('blocks').value)
+                if(times > 0) {
+                    for( let i = 1; i <= times; i++) {
+                        widthh += 20;
+                        let newBlock = document.createElement('div');
+                        newBlock.style.background = 'green';
+                        newBlock.style.height = '40px';
+                        newBlock.style.width = 250 + widthh + 'px';
+                        newBlock.innerHTML = `Блок номер ${i}: 2 * ${i} <sup>2</sup> = ${2 * i**2}`; 
+                        main.appendChild(newBlock);
+                    }
+                }
+                
             }
         </script>
         <style>
@@ -38,6 +55,8 @@
 
         <main>
             <button onclick="addNewBlock()">Добавить блок</button>
+            <input type="text" id="blocks" placeholder="введите кол-во блоков">
+            <button onclick="addNewBlocks()">Добавить блоки</button>
         </main>
 
         <footer> 
