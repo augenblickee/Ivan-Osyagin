@@ -8,6 +8,36 @@
         <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="../favicon-16x16.png">
         <link rel="shortcut icon" href="../favicon-32x32.png">
+        <style>
+            .currency-info {
+                border: 1px solid #000;
+                padding: 10px;
+                margin: 10px 0;
+                font-family: Arial, sans-serif;
+            }
+        </style>
+        <script>
+            window.onload = function() {
+                getEuroExchangeRate();
+            }
+
+            function getEuroExchangeRate() {
+                const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+                fetch(url)
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(json) {
+                        const currencyInfo = document.getElementById('currency-info');
+                        currencyInfo.innerHTML = `
+                            <p>Текущий курс евро: ${json.Valute.EUR.Value.toFixed(2)} руб.</p>
+                            <p>Дата запроса: ${(json.Date).slice(0, 10)}</p>
+                            <p>Курс за прошлую дату: ${json.Valute.EUR.Previous.toFixed(2)} руб.</p>
+                            <p>Разница: ${json.Valute.EUR.Value - json.Valute.EUR.Previous > 0 ? 'Курс поднялся' : 'Курс опустился'}</p>
+                        `;
+                    });
+            }
+        </script>
     </head>
 
     <body>
@@ -16,7 +46,8 @@
         </header>
 
         <main>
-            
+            <a href="https://www.cbr-xml-daily.ru/">Курсы валют, API</a>
+            <div id="currency-info" class="currency-info"></div>
         </main>
 
         <footer> 
