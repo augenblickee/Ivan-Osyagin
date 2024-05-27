@@ -35,10 +35,5 @@ function showDay() {
     let bigDateString = bigDateInput.value; 
     let bigDate = new Date(bigDateString); 
     let day = bigDate.getDay(); 
-    if (isNaN(bigDateInput)){
-        document.getElementById('bigDay1').innerHTML = 'Введите день недели'
-    }
-    else {
-        document.getElementById('bigDay1').innerHTML = 'День недели: ' + dayArr[day];
-    }
+    document.getElementById('bigDay1').innerHTML = 'День недели: ' + dayArr[day];
 }
