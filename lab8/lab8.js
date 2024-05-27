@@ -1,3 +1,5 @@
+let dayArr = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+
 function showDate() {
     let out = document.getElementById('current-date');
     let today = new Date();
@@ -21,10 +23,17 @@ function showDate() {
     let day = today.getDay();
 
     let mounthArr = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
-    let dayArr = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 
     document.getElementById('year').innerHTML = 'Сегодняшний год: ' + year;
     document.getElementById('mounth').innerHTML = 'Сегодняшний месяц: ' + mounthArr[mounth];
     document.getElementById('day').innerHTML = 'Сегодняшний день: ' + date;
     document.getElementById('dayWeek').innerHTML = 'Сегодняшний день недели: ' + dayArr[day];
+}
+
+function showDay() {
+    let bigDateInput = document.getElementById('bigDay');
+    let bigDateString = bigDateInput.value; 
+    let bigDate = new Date(bigDateString); 
+    let day = bigDate.getDay(); 
+    document.getElementById('bigDay1').innerHTML = 'День недели: ' + dayArr[day];
 }
